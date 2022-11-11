@@ -1,0 +1,33 @@
+
+def countRev (s):
+    # your code here
+    if len(s)%2!=0:
+        return -1 
+    count=0 
+    cur=0
+    for brack in s:
+        if brack=="{":
+            cur+=1 
+        elif brack=="}" and cur>0:
+            cur-=1 
+        else:
+            count+=1
+            cur+=1 
+    count+=cur//2 
+    return count
+            
+            
+    
+
+
+#{ 
+ # Driver Code Starts
+
+t = int (input ())
+for tc in range (t):
+    s = input ()
+    print (countRev (s))
+
+# Contributed By: Pranay Bansal
+
+# } Driver Code Ends
